@@ -1,0 +1,17 @@
+name: demo_github_actions
+
+# Specifying when to run 
+on:
+  push:
+
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: demo workflow job
+        run: echo "This is a demo starting workflow"
