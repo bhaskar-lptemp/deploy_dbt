@@ -1,0 +1,32 @@
+deploy_dbt_course:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: gv34951.ap-southeast-1
+
+      # User/password auth
+      user: BHASKAR
+      password: Darling@12345678
+
+      role: ACCOUNTADMIN
+      database: ANALYTICS
+      warehouse: TRANSFORMING
+      # in the future you should switch this schema to use a new environment variable
+      # definitely switch this to your schema though
+      schema: dev_schema
+      threads: 4
+      client_session_keep_alive: False
+    prod:
+      type: snowflake
+      account: gv34951.ap-southeast-1
+      # User/password auth
+      user: BHASKAR
+      password: Darling@12345678
+
+      role: ACCOUNTADMIN
+      database: ANALYTICS
+      warehouse: TRANSFORMING
+      schema: prod_schema
+      threads: 4
+      client_session_keep_alive: False
