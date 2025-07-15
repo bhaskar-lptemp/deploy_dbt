@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: tpcds
+    description: TPC-DS models any industry that must manage, sell and distribute products.
+    database: TPCDS_DATA
+    schema: RAW_SCHEMA
+    tables:
+      - name: customer
+        description: Each row in this dimension table represents a customer.
+        columns:
+          - name: c_customer_sk
+            description: primary key
+            tests:
+              - unique
+              - not_null
+          - name: c_customer_id
+            description: business key
+            tests:
+              - not_null
+          - name: c_preferred_cust_flag
+            tests:
+              - accepted_values:
+                  values: ["Y", "N"]  
