@@ -1,8 +1,0 @@
-version: 2
-
-models:
-    - name: stg_tcpds_customers
-      description: "This table has basic information about a customer"
-      columns:
-          - name: c_customer_sk
-            description: "The primary key for this table"

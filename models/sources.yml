@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: tpcds
+    schema: DEV_SCHEMA
+    tables:
+      - name: RAW_CUSTOMER
+        columns:
+          - name: C_CUSTKEY
+            description: customer key
+            tests: 
+              - unique
+              - not_null
+          - name: C_MKTSEGMENT
+            tests:
+              - accepted_values:
+                  values: ['HOUSEHOLD', 'BUILDING', 'MACHINERY', 'AUTOMOBILE', 'FURNITURE']
